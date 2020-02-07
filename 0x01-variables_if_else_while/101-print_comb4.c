@@ -15,7 +15,7 @@ int main(void)
 	{
 		while (b <= 57)
 		{
-			while (a <= 57)
+			while  (a <= 57)
 			{
 				putchar (c);
 				putchar (b);
@@ -27,6 +27,7 @@ int main(void)
 				{
 					putchar (44);
 					putchar (32);
+			
 				}
 				a = a + 1;
 			}
@@ -35,7 +36,10 @@ int main(void)
 		}
 		c = c + 1;
 		b = c + 1;
+	if (c=='7' && b == '8')
+		a = '9';
 	}
 	putchar('\n');
 	return (0);
 }
+
