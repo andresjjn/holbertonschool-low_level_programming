@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- * main - Infinite loop
- * return: 0
+ * main - causes an infinite loop
+ * Return: 0
  */
 
 int main(void)
