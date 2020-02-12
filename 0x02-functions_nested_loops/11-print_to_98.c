@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * print_to_98 - print numbers to 98
@@ -11,26 +12,28 @@ void print_to_98(int n)
 	{
 	for (; n >= 98; n--)
 	{
-		print_putchar(n);
 		if (n != 98)
 		{
-			_putchar(',');
-			_putchar(' ');
+			printf("%d, ", n);
+		}
+		else
+		{
+			printf("%d\n", n);
 		}
 	}
-	_putchar('\n');
 	}
 	else if (n < 98)
 	{
 	for (; n <= 98; n++)
 	{
-		print_putchar(n);
 		if (n != 98)
 		{
-			_putchar(',');
-			_putchar(' ');
+			printf("%d, ", n);
+		}
+		else
+		{
+			printf("%d\n", n);
 		}
 	}
-	_putchar('\n');
 	}
 }
