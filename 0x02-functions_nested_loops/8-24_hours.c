@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * print_last_digit - Print time from 00:00 at 23:00
+ * jack_bauer - Print time from 00:00 at 23:00
  * _putchar - writes the time
  * Return: 0
  */
