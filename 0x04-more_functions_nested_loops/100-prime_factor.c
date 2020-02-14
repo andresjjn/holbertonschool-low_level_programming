@@ -5,7 +5,7 @@
  * printf - Write character
  * Return: 0
  */
-void main(void)
+int main(void)
 {
 	int i = 2, p = 0;
 	int long n = 612852475143;
