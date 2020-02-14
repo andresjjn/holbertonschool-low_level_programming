@@ -5,10 +5,13 @@
  * printf - Write character
  * Return: 0
  */
+
 int main(void)
 {
-	int i = 2, p = 0;
-	int long n = 612852475143;
+	int i = 2;
+	int p = 0;
+	long int n = 612852475143;
+
 
 	while (i <= n)
 	{
@@ -19,9 +22,10 @@ int main(void)
 				p = i;
 			}
 			n = n / i;
-			}
+		}
 	i++;
-	} 
+	}
+
 	printf("%d\n", p);
-	return(0);
+	return (0);
 }
