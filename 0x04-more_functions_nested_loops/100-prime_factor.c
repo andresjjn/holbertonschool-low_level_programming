@@ -7,24 +7,20 @@
  */
 void main(void)
 {
-	long i, j, n = 612852475143, p, z = 0;
-/*
-	for (i = 2; i <= n; i++)
+	int i = 2, p = 0;
+	int long n = 612852475143;
+
+	while (i <= n)
 	{
 		if (n % i == 0)
 		{
-			p = 1;
-			for (j = 2; j <= i / 2; j++)
+			if (i > p)
 			{
-				if (i % j == 0)
-				{
-					p = 0;
-					break;
-				}
+				p = i;
 			}
-			if (p == 1)
-				z = i;
-		}
-*/
-	printf("50829599\n");
+			n = n / i;
+			}
+	i++;
+	} 
+	printf("%d\n", p);
 }
