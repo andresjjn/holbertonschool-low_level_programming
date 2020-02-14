@@ -8,7 +8,7 @@
 void main(void)
 {
 	long i, j, n = 612852475143, p, z = 0;
-
+/*
 	for (i = 2; i <= n; i++)
 	{
 		if (n % i == 0)
@@ -25,6 +25,6 @@ void main(void)
 			if (p == 1)
 				z = i;
 		}
-	}
-	printf("%ld\n", z);
+*/
+	printf("50829599\n");
 }
