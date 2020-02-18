@@ -2,7 +2,8 @@
 
 /**
  * reset_to_98 - Change the value of a variable through a pointer.
- * @*n: Pointer
+ * @*n: Pointer.
+ * @n: Pointer.
  * _putchar - writes the character c to stdout
  * Return: 0
  */
