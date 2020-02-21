@@ -4,7 +4,7 @@
  * _strcmp - Compare two strings.
  * @s1: String to campare.
  * @s2: String to compare.
- * Return: dest.
+ * Return: dest 
  */
 int _strcmp(char *s1, char *s2)
 {
