@@ -2,6 +2,7 @@
 
 /**
  * string_toupper - Put all letters to upper.
+ * @p: String to change.
  * Return: String to upper.
  */
 char *string_toupper(char *p)
