@@ -9,6 +9,7 @@
 char *_strchr(char *s, char c)
 {
 	unsigned int i = 0, y = 0;
+
 	while (s[y] != '\0')
 		y++;
 	while (i <= y)
