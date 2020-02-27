@@ -12,8 +12,7 @@ int srt(int n, int i)
 		return (i);
 	else if (n < (i * i))
 		return (-1);
-	else
- 		return (srt(n, i + 1));
+	return (srt(n, i + 1));
 }
 
 /**
