@@ -8,44 +8,31 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int i = 0, j = 0, s, t;
+	unsigned int i = 0, j = 0, s, t, n, l1 = 0, l2 = 0;
 	char *ptr;
 
-	while (s1[i] != '\0')
-		i++;
-	while (s2[j] != '\0')
-		j++;
 	if (s1 == NULL)
+		s1 = "";
+	while (s1[i] != 0)
 	{
-		ptr = malloc(sizeof(char) * (j + 1));
-		for (t = 0; t < j; t++)
-			ptr[t] = s2[t];
-		j++;
-		ptr[j] = '\0';
-		return (ptr);
-	}
-	else if (s2 == NULL)
-	{
-		ptr = malloc(sizeof(char) * (i + 1));
-		for (t = 0; t < i; t++)
-			ptr[t] = s1[t];
 		i++;
-		ptr[i] = '\0';
-		return (ptr);
+		l1++;
 	}
-	else
-	{
-		s = j + i + 1;
-		ptr = malloc(sizeof(char) * s);
-		for (t = 0; t < s - 1; t++)
-		{
-			if (t > 0 && t <= i)
-				ptr[t] = s1[t];
-			else if (t > i && t <= i + j)
-				ptr[t] = s2[t - i];
-			else if (t == s)
-				ptr[j] = '\0';
-		}
+	if (s2 == NULL)
+		s2 = "";
+	while (s2[j] != 0)
+	{	
+		j++;
+		l2++;
+	}
+	s = l1 + l2 + 1;
+	ptr = malloc(s * sizeof(char));
+	if (ptr == NULL)
+		return (NULL);
+	for (n = 0; n < l1; n++)
+		ptr[n] = s1[n];
+	for (t = 0; t <= l2; t++)
+		ptr[n + t] = s2[t];
+	ptr[t + n] = '\0';
 	return (ptr);
-	}
 }
