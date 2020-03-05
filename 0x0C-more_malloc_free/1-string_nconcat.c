@@ -30,9 +30,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int i, t, s, m;
 
 	if (s1 == NULL)
-		s = 0;
+		s1 = "";
 	else if (s2 == NULL)
-		m = 0;
+		s2 = "";
 	else
 	{
 		s = _strlen(s1);
@@ -44,10 +44,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		t = s + m + 1;
 	str = malloc(sizeof(char) * t);
 	if (str == NULL)
-	{
-		free(str);
-	return (NULL);
-	}
+		return (NULL);
 	for (i = 0; i < t; i++)
 	{
 	if (i < s)
