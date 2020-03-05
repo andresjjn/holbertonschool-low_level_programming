@@ -38,7 +38,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s = _strlen(s1);
 		m = _strlen(s2);
 	}
-	if (n <= m)
+	if (n < m)
 		t = s + n + 1;
 	else
 		t = s + m + 1;
