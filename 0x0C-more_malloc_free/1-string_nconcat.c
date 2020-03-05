@@ -30,24 +30,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int i, t, s, m;
 
 	if (s1 == NULL)
-	{
 		s1 = "";
-		m = _strlen(s2);
-	}
-	else if (s2 == NULL)
-	{
+	if (s2 == NULL)
 		s2 = "";
-		s = _strlen(s1);
-	}
-	else
-	{
-		s = _strlen(s1);
-		m = _strlen(s2);
-	}
-	if (n < m)
-		t = s + n + 1;
-	else
-		t = s + m + 1;
+	s = _strlen(s1);
+	m = _strlen(s2);
+	if (n >= m)
+		n = m;
+	t = (n + s + 1);
 	str = malloc(sizeof(char) * t);
 	if (str == NULL)
 		return (NULL);
