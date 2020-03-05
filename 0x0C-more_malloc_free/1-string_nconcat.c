@@ -29,8 +29,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *str;
 	unsigned int i, t, s, m;
 
-	s = _strlen(s1);
-	m = _strlen(s2);
+	if (s1 == NULL)
+		s = 0;
+	else if (s2 == NULL)
+		m = 0;
+	else
+	{
+		s = _strlen(s1);
+		m = _strlen(s2);
+	}
 	if (n <= m)
 		t = s + n + 1;
 	else
