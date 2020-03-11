@@ -10,19 +10,10 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-/**
- * struct d - Dog
- * @name: Dog name.
- * @age: Dog age.
- * @owner: Dog owner
- *
- * Description: Dog object
- */
-	struct d dog
+	if (d != 0)
 	{
-		*dog.n = name;
-		dog.a = age;
-		dog.o = owner;
-	};
-	return (d); 
+		d->name = name;
+		d->age = age;
+		d->owner = owner;
+	}
 }
