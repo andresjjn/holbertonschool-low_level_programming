@@ -11,8 +11,8 @@ void print_all(const char * const format, ...)
 	int j, h = 0, t = 0, v;
 	float f;
 	char *s, c;
-  
-	if (format == NULL)                     
+
+	if (format == NULL)
 		return;
 	while (format[h])
 	{
@@ -24,7 +24,7 @@ void print_all(const char * const format, ...)
 	while (format[h])
 	{
 		v = 0;
-		switch(format[h])
+		switch (format[h])
 		{
 			case 'c':
 				c = (char) va_arg(arg, int);
@@ -43,12 +43,12 @@ void print_all(const char * const format, ...)
 			break;
 			case 's':
 				s = va_arg(arg, char *);
-				printf("%s", s?s:"(nil)");
+				printf("%s", s ? s : "(nil)");
 				v = 1;
 			break;
 		}
 		h++;
-		if ( h != t && v == 1)
+		if (h != t && v == 1)
 			printf(", ");
 	}
 	printf("\n");
