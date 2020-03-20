@@ -1,14 +1,15 @@
 #include "lists.h"
 
 /**
- *add_node_end - Add new node to the end
- *@head: head of the linked list
- *@str: string to be placed in the memory space
- *Return: A pointer with the new head
+ *add_node_end - Adds a new node
+ *@head: Head of the linked list
+ *@str: String to be placed in the memory space
+ *Return: Pointer to the new head
  */
+
 list_t *add_node_end(list_t **head, const char *str)
 {
-	unsigned int j;
+	unsigned int i;
 	list_t *new_node;
 	list_t *tmp;
 
@@ -18,9 +19,9 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (NULL);
 	tmp = *head;
 	new_node->str = strdup(str);
-	while (str[j])
-		j++;
-	new_node->len = j;
+	while (str[i])
+		i++;
+	new_node->len = i;
 	new_node->next = NULL;
 	if (*head == NULL)
 		*head = new_node;
