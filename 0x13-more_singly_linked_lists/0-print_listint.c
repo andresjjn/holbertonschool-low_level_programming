@@ -5,7 +5,6 @@
  *@h: head of the singly linked list
  *Return: the number of nodes of the list
  */
-
 size_t print_listint(const listint_t *h)
 {
 	int j = 0;
