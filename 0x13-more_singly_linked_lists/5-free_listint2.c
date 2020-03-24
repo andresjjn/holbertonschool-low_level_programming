@@ -3,6 +3,7 @@
 /**
  *free_listint2 - Free the memory from linked list with double pointer
  *@head: head of the linked list
+ *Return: -
  */
 void free_listint2(listint_t **head)
 {
@@ -10,11 +11,11 @@ void free_listint2(listint_t **head)
 
 	if (*head == NULL)
 		return;
-	while(*head != NULL)
+	while (*head != NULL)
 	{
 		tmp = *head;
 		*head = tmp->next;
 		free(tmp);
-	} 
-	*head = NULL;
+	}
+	free(*head);
 }
