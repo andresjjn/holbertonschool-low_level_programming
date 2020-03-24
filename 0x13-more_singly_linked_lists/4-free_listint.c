@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- *free_list - Free the memory space in a linked list
+ *free_listint - Free the memory space in a linked list
  *@head: head of the linked list
  */
 void free_listint(listint_t *head)
