@@ -1,23 +1,6 @@
 #include "holberton.h"
 
 /**
- * main -  Copies the content of a file to another file.
- *@ac: Number of arguments.
- *@av: Array of arguments
- *Return: 0.
- */
-int main(int ac, char **av)
-{
-	if (ac != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
-	copy_file(av[1], av[2]);
-	return (0);
-}
-
-/**
  *copy_file - Copy a file in other
  *@file_from: Original file.
  *@file_to: Destination file.
@@ -53,4 +36,21 @@ void copy_file(const char *file_from, const char *file_to)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd_to);
 		exit(100);
 	}
+}
+
+/**
+ * main -  Copies the content of a file to another file.
+ *@ac: Number of arguments.
+ *@av: Array of arguments
+ *Return: 0.
+ */
+int main(int ac, char **av)
+{
+	if (ac != 3)
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
+	copy_file(av[1], av[2]);
+	return (0);
 }
