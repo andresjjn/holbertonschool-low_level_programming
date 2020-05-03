@@ -1,4 +1,21 @@
 #include "lists.h"
+/**
+ * dlistint_len - Function that returns the number of element in a list.
+ * @h: Header pointer of list.
+ * Return: The number of nodes
+ */
+size_t dlistint_len(const dlistint_t *h)
+{
+	size_t j = 0;
+
+	while (h != NULL)
+	{
+		h = h->next;
+		j++;
+	}
+	return (j);
+}
+
 
 /**
  * insert_dnodeint_at_index - Function that inserts a new_node node in a index.
@@ -9,36 +26,34 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new_node, *tmp = *h;
-	unsigned int i = 0;
+	size_t l, i;
+	dlistint_t *tmp, *tmp2;
 
-	new_node = malloc(sizeof(dlistint_t));
-	if (new_node == NULL)
+	l = dlistint_len(*h);
+	tmp = *h;
+
+	if (l < idx)
 		return (NULL);
-	new_node->n = n;
-	if (idx == 0 || *h == NULL)
-	{
-		free(new_node);
+	else if (idx == 0)
 		return (add_dnodeint(h, n));
-	}
-	while (tmp && i < idx - 1)
+	else if (idx == l)
+		return (add_dnodeint_end(h, n));
+	else if (idx != 0 && idx != l)
 	{
-		if (tmp->next == NULL)
+		tmp2 = malloc(sizeof(dlistint_t));
+		if (tmp2 != NULL)
 		{
-			free(new_node);
-			return (NULL);
+			tmp2->n = n;
+			for (i = 0; tmp; tmp = tmp->next, i++)
+				if (i + 1 == idx)
+				{
+					tmp2->next = tmp->next;
+					tmp2->prev = tmp;
+					tmp->next->prev = tmp2;
+					tmp->next = tmp2;
+					return (tmp2);
+				}
 		}
-		else if (tmp->next== NULL)
-		{
-			free(new_node);
-			return (add_dnodeint_end(h, n));
-		}
-		tmp = tmp->next;
-		i++;
 	}
-	new_node->prev = tmp;
-	new_node->next = tmp->next;
-	tmp->prev = new_node;
-	tmp->next = new_node;
-	return (new_node);
+	return (0);
 }
