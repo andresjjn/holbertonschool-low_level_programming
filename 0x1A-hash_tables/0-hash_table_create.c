@@ -12,11 +12,16 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 	if (size == 0)
 		return (NULL);
-	hashtable = malloc(sizeof(hash_table_t));
+	hashtable = calloc(1, sizeof(hash_table_t));
 	if (hashtable == NULL)
 		return (NULL);
-	hashtable->array = malloc(sizeof(char *) * size);
+	hashtable->array = calloc(size, sizeof(hash_node_t *));
 	if (hashtable->array == NULL)
+	{
+		free(hashtable);
 		return (NULL);
+	}
+	for (i = 0; i < size; i++)
+		hashtable->array[i] = NULL;
 	return (hashtable);
 }
