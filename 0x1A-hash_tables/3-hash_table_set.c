@@ -32,7 +32,7 @@ hash_node_t *add_node(hash_node_t **array, char *key, char *value)
 {
 	hash_node_t *new_node;
 
-	new_node = calloc(1, sizeof(hash_node_t *));
+	new_node = calloc(1, sizeof(hash_node_t));
 	if (new_node == NULL)
 		return (NULL);
 	new_node->key = strdup(key);
