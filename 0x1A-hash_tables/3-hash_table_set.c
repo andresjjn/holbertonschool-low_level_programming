@@ -11,7 +11,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int k = 0;
 
-	if (key[0] == '\0' || ht == NULL)
+	if (key[0] == '\0' || ht == NULL || value == NULL)
 		return (0);
 	k = key_index((unsigned char *)key, ht->size);
 	ht->array[k] = add_node(&ht->array[k], (char *)key, (char *)value);
@@ -35,7 +35,7 @@ hash_node_t *add_node(hash_node_t **array, char *key, char *value)
 	new_node = calloc(1, sizeof(hash_node_t *));
 	if (new_node == NULL)
 		return (NULL);
-	new_node->key = key;
+	new_node->key = strdup(key);
 	new_node->value = strdup(value);
 	new_node->next = *array;
 	*array = new_node;
