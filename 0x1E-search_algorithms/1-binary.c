@@ -14,7 +14,7 @@ int binary_search(int *array, size_t size, int value)
 
 	a = 0;
 	b = size - 1;
-	if (array == NULL || size <= 0)
+	if (!array)
 		return (-1);
 	while (a <= b)
 	{
@@ -24,13 +24,13 @@ int binary_search(int *array, size_t size, int value)
 				printf("%lu, ", i);
 			else
 				printf("%lu\n", i);
-		m = a + (b - a) / 2;
-		if (array[m] == value)
-			return (m);
-		if (array[m] < value)
+		m = (a + b) / 2;
+		if (array[m] > value)
+			b = m - 1;
+		else if (array[m] < value)
 			a = m + 1;
 		else
-			b = m - 1;
+			return (m);
 	}
 	return (-1);
 }
